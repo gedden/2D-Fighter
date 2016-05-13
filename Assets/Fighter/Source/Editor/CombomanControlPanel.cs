@@ -24,7 +24,12 @@ public class CombomanControlPanel
 
     public void Draw()
     {
-        if (_char == null) return;
+        GUILayout.Space(4);
+        if (_char == null)
+        {
+            GUILayout.Box("No Character Loaded", GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true));
+            return;
+        }
 
         if( _style == null )
         {
