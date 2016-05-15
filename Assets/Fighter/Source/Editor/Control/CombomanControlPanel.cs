@@ -2,15 +2,12 @@
 using UnityEngine;
 using Comboman;
 using System.Collections.Generic;
+using System;
 
-public class CombomanControlPanel
+public class CombomanControlPanel : CombomanPanel
 {
     private static int ID = 0;
     GUIStyle _style = null;
-    CharacterData _char;
-
-
-
     
 
     /// <summary>
@@ -22,9 +19,11 @@ public class CombomanControlPanel
 
     }
 
-    public void Draw()
+    public override void Draw()
     {
         GUILayout.Space(4);
+
+        var _char = CombomanEditor.Instance.Character;
         if (_char == null)
         {
             GUILayout.Box("No Character Loaded", GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true));
@@ -36,6 +35,9 @@ public class CombomanControlPanel
             _style = new GUIStyle(GUI.skin.box);
             _style.normal.background = Texture2D.blackTexture;
         }
+
+        EditorGUILayout.LabelField("Frames", ""+Character.Frames.Count);
+        EditorGUILayout.LabelField("Sprites", "" + Character.LoadSprites().Length);
 
         GUILayout.TextField(_char.name);
         //if( GUILayout.Button("Add Frame Data") ) AddNewFrame();
@@ -53,23 +55,6 @@ public class CombomanControlPanel
 
         // Make this auto show up after that last draw.... Maybe some kind of GUILayoutUtlity.SetLastRect?
         // GUILayout.Button("Test " + ID);
-    }
-
-    /// <summary>
-    /// Character Data accessor
-    /// </summary>
-    public CharacterData CharacterData
-    {
-        get
-        {
-            return _char;
-        }
-        set
-        {
-            _char = value;
-
-            // Assign the left window
-        }
     }
 
 
@@ -97,5 +82,10 @@ public class CombomanControlPanel
         GUI.Box(position, GUIContent.none, _staticRectStyle);
 
 
+    }
+
+    public override void OnCharacterLoaded(CharacterData data)
+    {
+        //throw new NotImplementedException();
     }
 }

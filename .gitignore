@@ -8,6 +8,7 @@ ProjectSettings/*
 Assets/Editor/*
 Assets/ShaderForge/*
 Assets/Standard Assets/*
+Temp/*
 
 # User-specific files
 *.suo

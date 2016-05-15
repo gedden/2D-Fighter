@@ -24,7 +24,7 @@ class CombomanContentWindow
     {
         get
         {
-            return parent.Control.CharacterData;
+            return CombomanEditor.Instance.Character;
         }
     }
 

@@ -39,7 +39,7 @@ namespace Comboman
             Frames = new Dictionary<string, Frame>();
 
             // Set the sprites
-            var sprites = Resources.LoadAll<Sprite>(Data.spriteSheet);
+            var sprites = Data.LoadSprites();
 
 
             // Build up all the frame refrences

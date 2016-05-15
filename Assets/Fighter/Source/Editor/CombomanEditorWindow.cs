@@ -62,7 +62,7 @@ public class CombomanEditorWindow : EditorWindow
         var data = CharacterData.Read(path);
 
         // Assign the left panel
-        control.CharacterData = data;
+        //control.CharacterData = data;
     }
 
     /// <summary>

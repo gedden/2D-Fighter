@@ -6,13 +6,13 @@ using UnityEditor;
 using UnityEngine;
 using Comboman;
 
-class FrameDataEditor
+class FrameDataPanel : ICombomanPanel
 {
     GUIStyle styleRightView = null;
     private FrameData data;
     private Frame frame;
 
-    public FrameDataEditor(CharacterData character, FrameData data)
+    public FrameDataPanel(CharacterData character, FrameData data)
     {
         styleRightView = new GUIStyle(GUI.skin.box);
 
@@ -21,11 +21,11 @@ class FrameDataEditor
         this.data = data;
     }
 
-    public void OnGUI()
+    public void Draw()
     {
         //pos = GUILayout.BeginScrollView(pos, GUILayout.ExpandHeight(true), GUILayout.Width(width), GUILayout.Height(300));
         //GUILayout.Box("No Character Loaded", styleRightView, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
-        GUILayout.Box(data.SpriteName, styleRightView, GUILayout.Width(300), GUILayout.Height(300));
+        GUILayout.Box(data.SpriteName, styleRightView, GUILayout.Width(FrameDataListPanel.Height), GUILayout.Height(FrameDataListPanel.Height));
 
 
         var rect = GUILayoutUtility.GetLastRect();
@@ -35,5 +35,10 @@ class FrameDataEditor
 
         GUI.DrawTextureWithTexCoords(new Rect(rect.x, rect.y, tr.width*2, tr.height*2), t, r);
 
+    }
+
+    public void OnCharacterLoaded(CharacterData data)
+    {
+        throw new NotImplementedException();
     }
 }

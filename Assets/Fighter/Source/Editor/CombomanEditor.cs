@@ -1,20 +1,41 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using Comboman;
+using System.Collections.Generic;
 
 public class CombomanEditor : EditorWindow
 {
     FrameSequenceEditor editor = null;
     CombomanControlPanel control = null ;
+    FrameDataListPanel frames = null;
     CombomanContentWindow content = null;
+
+    private List<CombomanTab> tabs = null;
+
+    public static CombomanEditor Instance { get; private set; }
+
 
     // Add menu named "My Window" to the Window menu
     [MenuItem("Window/Comboman Editor")]
     static void Init()
     {
+        
         var window = GetWindow<CombomanEditor>();
+        window.Character = null;
+        Instance = window;
+        window.SetupTabs();
+        
         window.position = new Rect(200, 200, 1000, 600);
-        window.control = new CombomanControlPanel();
+    }
+
+    private void SetupTabs()
+    {
+        tabs = new List<CombomanTab>();
+        for(int x=0;x<6;x++ )
+        {
+            var tab = new CombomanTab();
+            tabs.Add(tab);
+        }
     }
 
     /// <summary>
@@ -24,16 +45,58 @@ public class CombomanEditor : EditorWindow
     {
         var path = EditorUtility.OpenFilePanel(
                 "Load Character XML",
-                "Assets/Fighter/Data",
+                CharacterData.CHARACTER_DATA_PATH,
                 "xml");
         if (path.Length == 0)
             return;
 
-        var data = CharacterData.Read(path);
-
-        // Assign the left panel
-        control.CharacterData = data;
+        Character = CharacterData.Read(path);
+        OnCharacterLoaded();
     }
+
+    /// <summary>
+    /// Save a character's xml file!
+    /// </summary>
+    public void SaveCharacter()
+    {
+        Character.Write();
+    }
+
+    /// <summary>
+    /// Create a new character from a sprite
+    /// </summary>
+    public void CreateCharacter()
+    {
+        var path = EditorUtility.OpenFilePanel(
+                "Create Character",
+                "Assets/Fighter/Artwork/Resources/Characters",
+                "*.*");
+
+        if (path.Length == 0)
+            return;
+
+        // Cull the path
+        path = path.Substring(path.LastIndexOf("/")+1);
+
+        // remove the file name
+        path = path.Substring(0, path.LastIndexOf("."));
+
+        Character = CharacterData.Create(path);
+        OnCharacterLoaded();
+    }
+
+    /// <summary>
+    /// Called once a character is laoded
+    /// </summary>
+    private void OnCharacterLoaded()
+    {
+        // Assign the left panel
+        control.OnCharacterLoaded(Character);
+        frames.OnCharacterLoaded(Character);
+    }
+
+
+    public CharacterData Character { get; set; }
 
 
 
@@ -42,12 +105,25 @@ public class CombomanEditor : EditorWindow
     /// </summary>
     void OnGUI()
     {
+        Instance = this;
 
         // The toolbar
         GUILayout.BeginHorizontal(EditorStyles.toolbar);
 
+        if (GUILayout.Button("Create", EditorStyles.toolbarButton))
+            CreateCharacter();
+
         if (GUILayout.Button("Load", EditorStyles.toolbarButton))
             LoadCharacter();
+
+        // For saving a character
+        GUI.enabled = Character != null;
+        if (Character != null && Character.Dirty)
+            GUI.color = Color.green;
+        if (GUILayout.Button("Save", EditorStyles.toolbarButton))
+            SaveCharacter();
+           GUI.color = Color.white;
+        GUI.enabled = true;
 
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
@@ -60,24 +136,47 @@ public class CombomanEditor : EditorWindow
 
 
         GUILayout.BeginHorizontal(styleLeftView);
-
+        {
             // Left Controls
             GUILayout.BeginVertical(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true), GUILayout.MaxWidth(300));
-            //GUILayout.Button("Just at test");
-            control.Draw();
-            //GUILayout.Box("Left Box " + last.height, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true), GUILayout.MaxWidth(300));
+            Control.Draw();
             GUILayout.EndVertical();
 
             // Main Content Area
-            GUILayout.Box("Main Box", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
 
+            if (tabs == null || Character == null)
+            {
+                GUILayout.Box("No Character Selected", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+            }
+            else
+            {
+                GUILayout.BeginVertical(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+                {
+                    // Tab bar
+                    GUILayout.BeginHorizontal(EditorStyles.toolbar);
+                    {
+                        foreach (var tab in tabs)
+                            tab.DrawTab();
+                    }
+                    GUILayout.EndHorizontal();
+
+                    GUILayout.BeginHorizontal(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+                    // Content 
+                    foreach (var tab in tabs)
+                        if (tab.Selected)
+                            tab.Draw();
+                    GUILayout.EndHorizontal();
+                }
+                GUILayout.EndVertical();
+            }
+        }
         GUILayout.EndHorizontal();
 
 
         GUILayout.BeginVertical();
 
         // Bottom Area
-        GUILayout.Box("Lower Box", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true), GUILayout.MaxHeight(200), GUILayout.MinHeight(200));
+        Frames.Draw();
 
         GUILayout.EndVertical();
 
@@ -85,5 +184,35 @@ public class CombomanEditor : EditorWindow
 
 
     }
-    
+
+    private CombomanControlPanel Control
+    {
+        get
+        {
+            if (control == null)
+                control = new CombomanControlPanel();
+            return control;
+        }
+    }
+
+    private FrameDataListPanel Frames
+    {
+        get
+        {
+            if (frames == null)
+                frames = new FrameDataListPanel();
+            return frames;
+        }
+    }
+
+    private CombomanTab _selected = null;
+    public void DoSelect(CombomanTab tab)
+    {
+        if (_selected != null)
+            _selected.Selected = false;
+        tab.Selected = true;
+        _selected = tab;
+    }
+
+
 }
