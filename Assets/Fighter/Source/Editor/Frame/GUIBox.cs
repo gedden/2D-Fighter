@@ -48,6 +48,20 @@ namespace Comboman
             _selected.a = 0.8f;
         }
 
+        public Rect ScaledData
+        {
+            get
+            {
+                var s = CombomanEditor.Instance.ViewScale;
+                return new Rect(Data.x * s, Data.y * s, Data.width * s, Data.height * s);
+            }
+            set
+            {
+                var s = CombomanEditor.Instance.ViewScale;
+                Data = new Rect(value.x / s, value.y / s, value.width / s, value.height / s);
+            }
+        }
+
 
         /// <summary>
         /// Draw the current box
@@ -60,7 +74,7 @@ namespace Comboman
 
             GUI.color = Selected?_selected:_color;
 
-            Rect pos = new Rect(Data);
+            Rect pos = new Rect(ScaledData);
             pos.x += bounds.x;
             pos.y += bounds.y;
 
@@ -94,7 +108,7 @@ namespace Comboman
                 
 
                 // Bottom Right Handle
-                r = new Rect(pos.x + _lastBounds.x - h + Data.width, pos.y + _lastBounds.y - h + Data.height, s, s);
+                r = new Rect(pos.x + _lastBounds.x - h + ScaledData.width, pos.y + _lastBounds.y - h + ScaledData.height, s, s);
                 GUILayout.BeginArea(r);
                 if (GUILayout.RepeatButton("", GUILayout.Width(s * 2), GUILayout.Height(s * 2)))
                 {
@@ -143,12 +157,12 @@ namespace Comboman
             {
                 case DragType.TopLeft:
                     dragStart = new Vector2(rect.x + Event.current.mousePosition.x + _lastBounds.x, rect.y + Event.current.mousePosition.y + _lastBounds.y);
-                    drag = new Vector2(_lastBounds.x + Data.x + Data.width, _lastBounds.y + Data.y + Data.height);           
+                    drag = new Vector2(_lastBounds.x + ScaledData.x + ScaledData.width, _lastBounds.y + ScaledData.y + ScaledData.height);           
                     break;
                 case DragType.TopRight:
                 case DragType.BottomLeft:
                 case DragType.BottomRight:
-                    dragStart = new Vector2(_lastBounds.x + Data.x, _lastBounds.y + Data.y);
+                    dragStart = new Vector2(_lastBounds.x + ScaledData.x, _lastBounds.y + ScaledData.y);
                     drag = new Vector2(rect.x + Event.current.mousePosition.x + _lastBounds.x, rect.y + Event.current.mousePosition.y + _lastBounds.y);
                     
                     break;
@@ -201,7 +215,7 @@ namespace Comboman
             if (_dragging)
             {
                 _dragging = false;
-                Data = new Rect(dragStart.x - _lastBounds.x, dragStart.y - _lastBounds.y, drag.x - dragStart.x, drag.y - dragStart.y);
+                ScaledData = new Rect(dragStart.x - _lastBounds.x, dragStart.y - _lastBounds.y, drag.x - dragStart.x, drag.y - dragStart.y);
             }
             type = DragType.None;
         }

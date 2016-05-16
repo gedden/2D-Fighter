@@ -47,20 +47,40 @@ class FrameTab : CombomanTab
     {
         if (data == null) return;
         if (frame == null) return;
-        GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
-        var tabRect = new Rect(GUILayoutUtility.GetLastRect());
+        GUILayout.BeginHorizontal(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+        {
 
-        
-        // Draw the background
-        DrawBackground(tabRect);
+            // Draw the tools
+            GUILayout.Box("asdf", GUILayout.Width(35), GUILayout.ExpandHeight(true));
+            DrawTools(GUILayoutUtility.GetLastRect());
 
-        // Draw the character
-        DrawCharacter(tabRect);
+            // Draw the character
+            //GUILayout.Box("big", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+            GUILayout.BeginHorizontal(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+            {
+                GUILayout.FlexibleSpace();
+                var tx = frame.Sprite.textureRect;
+                tx.width *= CombomanEditor.Instance.ViewScale;
+                tx.height *= CombomanEditor.Instance.ViewScale;
+                GUILayout.BeginVertical(GUILayout.ExpandHeight(true));
+                {
+                    GUILayout.FlexibleSpace();
+                    GUILayout.Box("asdf", GUILayout.Width(tx.width), GUILayout.Height(tx.height));
 
-        HitBox.Draw(tabRect);
+                    var charRect = GUILayoutUtility.GetLastRect();
+                    DrawBackground(charRect);
+                    DrawCharacter(charRect);
+                    HitBox.Draw(charRect);
 
-        // Draw the tools
-        DrawTools(tabRect);
+                    GUILayout.FlexibleSpace();
+                }
+                GUILayout.EndVertical();
+                GUILayout.FlexibleSpace();
+            }
+            GUILayout.EndHorizontal();
+
+        }
+        GUILayout.EndHorizontal();
     }
 
     private void DrawTools(Rect dim)
@@ -94,6 +114,7 @@ class FrameTab : CombomanTab
         GUI.DrawTextureWithTexCoords(dim, backgroundTexture, new Rect(0, 0, dim.width / backgroundTexture.width, dim.height / backgroundTexture.height));
     }
 
+
     /// <summary>
     /// Draw the actual character
     /// </summary>
@@ -108,7 +129,7 @@ class FrameTab : CombomanTab
         var sx = rect.width / tr.width;
         var sy = rect.height / tr.height;
 
-        var scale = 1.0f;// Mathf.Min(sx, sy);
+        var scale = CombomanEditor.Instance.ViewScale;
 
         var area = new Rect(rect.x, rect.y, tr.width * scale, tr.height * scale);
         area.x += rect.width / 2 - area.width / 2;

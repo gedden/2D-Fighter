@@ -53,8 +53,10 @@ public class CombomanControlPanel : CombomanPanel
         //GUILayout.Space(next.height);
         GUILayout.Height(next.height);
 
-        // Make this auto show up after that last draw.... Maybe some kind of GUILayoutUtlity.SetLastRect?
-        // GUILayout.Button("Test " + ID);
+        EditorGUILayout.LabelField("View Scale", "" + CombomanEditor.Instance.ViewScale);
+
+        if (Event.current.type == EventType.scrollWheel)
+            CombomanEditor.Instance.ViewScale -= Event.current.delta.y / 10.0f;
     }
 
 

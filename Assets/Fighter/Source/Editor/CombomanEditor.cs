@@ -13,6 +13,7 @@ public class CombomanEditor : EditorWindow
 
     private List<CombomanTab> tabs = null;
     private FrameTab frameTab = null;
+    private float _scale = 1.0f;
 
     public static CombomanEditor Instance { get; private set; }
 
@@ -29,6 +30,27 @@ public class CombomanEditor : EditorWindow
         
         window.position = new Rect(200, 200, 1000, 600);
     }
+
+    public float ViewScale
+    {
+        get
+        {
+            return _scale;
+        }
+        set
+        {
+            var last = _scale;
+
+            if (value < 1)
+                _scale = 1.0f;
+            else
+                _scale = value;
+
+            if (last != _scale)
+                RequestRepaint();
+        }
+    }
+
 
     private void SetupTabs()
     {
