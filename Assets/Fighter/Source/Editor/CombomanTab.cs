@@ -6,6 +6,7 @@ using UnityEngine;
 public class CombomanTab : CombomanPanel
 {
     private static readonly Color UNSELECTED = new Color(0.9f, 0.9f, 0.9f);
+    protected string TabName = "Tab Name";
     public CombomanTab()
     {
         Selected = false;
@@ -15,7 +16,7 @@ public class CombomanTab : CombomanPanel
     {
         GUI.color = Selected ? Color.white : UNSELECTED;
 
-        if (GUILayout.Button("Tab", EditorStyles.toolbarButton))
+        if (GUILayout.Button(TabName, EditorStyles.toolbarButton))
             CombomanEditor.Instance.DoSelect(this);
 
         GUI.color = Color.white;

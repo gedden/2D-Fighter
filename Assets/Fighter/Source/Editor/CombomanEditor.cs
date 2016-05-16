@@ -3,14 +3,16 @@ using UnityEditor;
 using Comboman;
 using System.Collections.Generic;
 
+[ExecuteInEditMode]
 public class CombomanEditor : EditorWindow
 {
     FrameSequenceEditor editor = null;
     CombomanControlPanel control = null ;
     FrameDataListPanel frames = null;
-    CombomanContentWindow content = null;
+    public static readonly float LEFT_CONTROL_WIDTH = 300;
 
     private List<CombomanTab> tabs = null;
+    private FrameTab frameTab = null;
 
     public static CombomanEditor Instance { get; private set; }
 
@@ -31,11 +33,31 @@ public class CombomanEditor : EditorWindow
     private void SetupTabs()
     {
         tabs = new List<CombomanTab>();
-        for(int x=0;x<6;x++ )
+
+        frameTab = new FrameTab();
+        tabs.Add(frameTab);
+
+
+        for (int x=0;x<2;x++ )
         {
             var tab = new CombomanTab();
             tabs.Add(tab);
         }
+    }
+
+    public void Update()
+    {
+        if (_repaint)
+        {
+            Repaint();
+            _repaint = false;
+        }
+    }
+
+    private bool _repaint = false;
+    public void RequestRepaint()
+    {
+        _repaint = true;
     }
 
     /// <summary>
@@ -138,7 +160,7 @@ public class CombomanEditor : EditorWindow
         GUILayout.BeginHorizontal(styleLeftView);
         {
             // Left Controls
-            GUILayout.BeginVertical(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true), GUILayout.MaxWidth(300));
+            GUILayout.BeginVertical(GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true), GUILayout.MaxWidth(LEFT_CONTROL_WIDTH));
             Control.Draw();
             GUILayout.EndVertical();
 
@@ -212,6 +234,26 @@ public class CombomanEditor : EditorWindow
             _selected.Selected = false;
         tab.Selected = true;
         _selected = tab;
+    }
+
+
+    private FrameDataPanel _selectedFrame = null;
+    public void DoSelect(FrameDataPanel frame)
+    {
+        if (_selectedFrame != null)
+            _selectedFrame.Selected = false;
+
+        _selectedFrame = frame;
+        _selectedFrame.Selected = true;
+
+        if (frameTab == null)
+            SetupTabs();
+        
+        frameTab.OnSelectFrame(frame.FrameData);
+
+        // Make the tab the selection
+        DoSelect(frameTab);
+
     }
 
 
