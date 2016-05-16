@@ -17,10 +17,13 @@ namespace Comboman
 
         private Rect _lastBounds;
         public bool Selected;
+        public bool Enabled;
         private bool _dragging;
         private Vector2 dragStart;
         private Vector2 drag;
         private DragType type = DragType.None;
+        private string name = "";
+        private Texture2D buttonTexture;
 
         private enum DragType
         {
@@ -33,7 +36,7 @@ namespace Comboman
         }
 
 
-        public GUIBox(Color color)
+        public GUIBox(string name, Color color, Texture2D buttonTexture)
         {
             if(BoxTexture==null)
                 BoxTexture = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Fighter/Artwork/Editor/Box.png");
@@ -41,11 +44,15 @@ namespace Comboman
             _color = color;
             _color.a = 0.5f;
             Selected = false;
+            Enabled = false;
 
             _selected.r = Mathf.Min(_color.r * 4f, 1f);
             _selected.g = Mathf.Min(_color.g * 4f, 1f);
             _selected.b = Mathf.Min(_color.b * 4f, 1f);
             _selected.a = 0.8f;
+
+            this.name = name;
+            this.buttonTexture = buttonTexture;
         }
 
         public Rect ScaledData
@@ -62,6 +69,22 @@ namespace Comboman
             }
         }
 
+        public bool DrawToolButton()
+        {
+            Enabled = GUILayout.Toggle(Enabled, name);
+
+            GUI.color = Selected ? Color.gray : Color.white;
+
+            
+            GUI.enabled = Enabled;
+
+            var next = GUILayout.Button(buttonTexture);
+
+            GUI.enabled = true;
+
+            GUI.color = Color.white;
+            return next ? !Selected : Selected;
+        }
 
         /// <summary>
         /// Draw the current box
