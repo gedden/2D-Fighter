@@ -132,64 +132,64 @@
     <FrameData>
       <SpriteName>balth_2</SpriteName>
       <Hitbox>
-        <x>0</x>
-        <y>0</y>
+        <x>20.9999924</x>
+        <y>7.749997</y>
         <position>
-          <x>0</x>
-          <y>0</y>
+          <x>20.9999924</x>
+          <y>7.749997</y>
         </position>
         <center>
-          <x>0</x>
-          <y>0</y>
+          <x>36.9999847</x>
+          <y>52.12498</y>
         </center>
         <min>
-          <x>0</x>
-          <y>0</y>
+          <x>20.9999924</x>
+          <y>7.749997</y>
         </min>
         <max>
-          <x>0</x>
-          <y>0</y>
+          <x>52.99998</x>
+          <y>96.49997</y>
         </max>
-        <width>0</width>
-        <height>0</height>
+        <width>31.9999886</width>
+        <height>88.74997</height>
         <size>
-          <x>0</x>
-          <y>0</y>
+          <x>31.9999886</x>
+          <y>88.74997</y>
         </size>
-        <xMin>0</xMin>
-        <yMin>0</yMin>
-        <xMax>0</xMax>
-        <yMax>0</yMax>
+        <xMin>20.9999924</xMin>
+        <yMin>7.749997</yMin>
+        <xMax>52.99998</xMax>
+        <yMax>96.49997</yMax>
       </Hitbox>
       <Attackbox>
-        <x>0</x>
-        <y>0</y>
+        <x>55.35711</x>
+        <y>6.071425</y>
         <position>
-          <x>0</x>
-          <y>0</y>
+          <x>55.35711</x>
+          <y>6.071425</y>
         </position>
         <center>
-          <x>0</x>
-          <y>0</y>
+          <x>62.3213921</x>
+          <y>13.7499924</y>
         </center>
         <min>
-          <x>0</x>
-          <y>0</y>
+          <x>55.35711</x>
+          <y>6.071425</y>
         </min>
         <max>
-          <x>0</x>
-          <y>0</y>
+          <x>69.285675</x>
+          <y>21.4285583</y>
         </max>
-        <width>0</width>
-        <height>0</height>
+        <width>13.9285631</width>
+        <height>15.3571339</height>
         <size>
-          <x>0</x>
-          <y>0</y>
+          <x>13.9285631</x>
+          <y>15.3571339</y>
         </size>
-        <xMin>0</xMin>
-        <yMin>0</yMin>
-        <xMax>0</xMax>
-        <yMax>0</yMax>
+        <xMin>55.35711</xMin>
+        <yMin>6.071425</yMin>
+        <xMax>69.285675</xMax>
+        <yMax>21.4285583</yMax>
       </Attackbox>
     </FrameData>
     <FrameData>

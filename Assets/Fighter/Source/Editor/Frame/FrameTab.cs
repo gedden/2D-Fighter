@@ -11,11 +11,11 @@ class FrameTab : CombomanTab
     private FrameData data;
     private Frame frame;
     private Texture2D backgroundTexture;
-    private Texture2D hitboxButtonTexture;
+    private Texture2D hitboxButtonTexture, saveButtonTexture;
     
     private bool editAttackbox;
 
-    private GUIBox HitBox;
+    private GUIBox HitBox, AttackBox;
 
     /// <summary>
     /// Class Constructor
@@ -28,7 +28,9 @@ class FrameTab : CombomanTab
         backgroundTexture.wrapMode = TextureWrapMode.Repeat;
 
         hitboxButtonTexture = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Fighter/Artwork/Editor/HitboxSelect.png");
+        saveButtonTexture = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Fighter/Artwork/Editor/save-icon.png");
         HitBox = new GUIBox(Color.yellow);
+        AttackBox = new GUIBox(Color.red);
     }
 
     /// <summary>
@@ -37,9 +39,18 @@ class FrameTab : CombomanTab
     /// <param name="data"></param>
     public void OnSelectFrame(FrameData data)
     {
+        if (this.data == data)
+            return;
+
+        this.data = data;
         var sprites = Character.LoadSprites();
 
         frame = Frame.CreateFrame(data, sprites);
+
+        HitBox.Data = data.Hitbox;
+        AttackBox.Data = data.Attackbox;
+        CombomanEditor.Instance.RequestRepaint();
+
         this.data = data;
     }
 
@@ -71,6 +82,7 @@ class FrameTab : CombomanTab
                     DrawBackground(charRect);
                     DrawCharacter(charRect);
                     HitBox.Draw(charRect);
+                    AttackBox.Draw(charRect);
 
                     GUILayout.FlexibleSpace();
                 }
@@ -83,17 +95,41 @@ class FrameTab : CombomanTab
         GUILayout.EndHorizontal();
     }
 
+    private bool HasPendingChanges()
+    {
+        if (HitBox.Data != frame.Data.Hitbox)
+            return true;
+
+        if (AttackBox.Data != frame.Data.Attackbox)
+            return true;
+        return false;
+    }
+
+    private void Save()
+    {
+        // Update the frame data
+        Character.UpdateFrame(frame.Sprite, HitBox.Data, AttackBox.Data);
+    }
+
     private void DrawTools(Rect dim)
     {
         var size = new Rect(CombomanEditor.LEFT_CONTROL_WIDTH + dim.x + 15, dim.y + 45, 35, 100);
         GUILayout.BeginArea(size);
         //GUILayout.Box("asdf", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
         HitBox.Selected = DrawToolButton(HitBox.Selected, hitboxButtonTexture);
-        editAttackbox = DrawToolButton(editAttackbox, hitboxButtonTexture);
+        AttackBox.Selected = DrawToolButton(AttackBox.Selected, hitboxButtonTexture);
+
+        GUI.color = HasPendingChanges() ? Color.green : Color.white;
+        if (GUILayout.Button(saveButtonTexture))
+            Save();
+        GUI.color = Color.white;
+        
         //GUILayout.Button("test");
         //GUILayout.Button("test");
         GUILayout.EndArea();
     }
+
+
 
     private bool DrawToolButton(bool value, Texture2D texture)
     {

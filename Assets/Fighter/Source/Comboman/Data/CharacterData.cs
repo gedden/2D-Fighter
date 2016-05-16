@@ -117,5 +117,14 @@ namespace Comboman
             Dirty = true;
             return result;
         }
+
+        public FrameData UpdateFrame(Sprite sprite, Rect hitbox, Rect attackbox)
+        {
+            var frame = GetFrameForSprite(sprite);
+            frame.Hitbox = hitbox;
+            frame.Attackbox = attackbox;
+            Dirty = true;
+            return frame;
+        }
     }
 }
