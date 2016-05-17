@@ -5,36 +5,36 @@
   <Frames>
     <FrameData>
       <SpriteName>balth_0</SpriteName>
-      <HasHitbox>false</HasHitbox>
+      <HasHitbox>true</HasHitbox>
       <Hitbox>
-        <x>0</x>
-        <y>0</y>
+        <x>14.4</x>
+        <y>0.8</y>
         <position>
-          <x>0</x>
-          <y>0</y>
+          <x>14.4</x>
+          <y>0.8</y>
         </position>
         <center>
-          <x>0</x>
-          <y>0</y>
+          <x>37.4</x>
+          <y>48.8</y>
         </center>
         <min>
-          <x>0</x>
-          <y>0</y>
+          <x>14.4</x>
+          <y>0.8</y>
         </min>
         <max>
-          <x>0</x>
-          <y>0</y>
+          <x>60.4</x>
+          <y>96.8</y>
         </max>
-        <width>0</width>
-        <height>0</height>
+        <width>46</width>
+        <height>96</height>
         <size>
-          <x>0</x>
-          <y>0</y>
+          <x>46</x>
+          <y>96</y>
         </size>
-        <xMin>0</xMin>
-        <yMin>0</yMin>
-        <xMax>0</xMax>
-        <yMax>0</yMax>
+        <xMin>14.4</xMin>
+        <yMin>0.8</yMin>
+        <xMax>60.4</xMax>
+        <yMax>96.8</yMax>
       </Hitbox>
       <HasAttackbox>false</HasAttackbox>
       <Attackbox>

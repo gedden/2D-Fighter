@@ -19,6 +19,7 @@ public class CombomanControlPanel : CombomanPanel
 
     }
 
+    Vector2 scroll = Vector2.zero;
     public override void Draw()
     {
         GUILayout.Space(4);
@@ -43,16 +44,28 @@ public class CombomanControlPanel : CombomanPanel
         //if( GUILayout.Button("Add Frame Data") ) AddNewFrame();
         GUILayout.Button("Test 2 " + ID);
 
+        scroll = GUILayout.BeginScrollView(scroll, GUILayout.Height(300), GUILayout.ExpandWidth(true));
+        {
+            GUILayout.BeginVertical(GUILayout.ExpandWidth(true));
+            {
+                for( var i=0;i<60;i++ )
+                    GUILayout.Button("Hi", EditorStyles.toolbarButton);
+            }
+            GUILayout.EndVertical();
+        }
+        GUILayout.EndScrollView();
+
         //GUILayout.BeginArea(new Rect(0, 0, 200, 200), Texture2D.blackTexture);
         //GUILayout.Button("Test32 " + ID);
         //GUILayout.EndArea();
-
+        
+        /*
         var last = GUILayoutUtility.GetLastRect();
         var next = new Rect(6, last.yMax + EditorGUIUtility.singleLineHeight, last.width - 6, last.width - 6);
         GUIDrawRect(next, Color.black);
         //GUILayout.Space(next.height);
         GUILayout.Height(next.height);
-
+        */
         EditorGUILayout.LabelField("View Scale", "" + CombomanEditor.Instance.ViewScale);
 
         if (Event.current.type == EventType.scrollWheel)

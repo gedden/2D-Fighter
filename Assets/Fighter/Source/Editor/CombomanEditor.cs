@@ -13,6 +13,7 @@ public class CombomanEditor : EditorWindow
 
     private List<CombomanTab> tabs = null;
     private FrameTab frameTab = null;
+    private MovesTab animTab = null;
     private float _scale = 1.0f;
 
     public static CombomanEditor Instance { get; private set; }
@@ -58,6 +59,9 @@ public class CombomanEditor : EditorWindow
 
         frameTab = new FrameTab();
         tabs.Add(frameTab);
+
+        animTab = new MovesTab();
+        tabs.Add(animTab);
 
 
         for (int x=0;x<2;x++ )
@@ -262,6 +266,8 @@ public class CombomanEditor : EditorWindow
     private FrameDataPanel _selectedFrame = null;
     public void DoSelect(FrameDataPanel frame)
     {
+        var last = _selectedFrame;
+
         if (_selectedFrame != null)
             _selectedFrame.Selected = false;
 
@@ -271,10 +277,12 @@ public class CombomanEditor : EditorWindow
         if (frameTab == null)
             SetupTabs();
         
+
         frameTab.OnSelectFrame(frame.FrameData);
 
         // Make the tab the selection
-        DoSelect(frameTab);
+        if( last == null )
+            DoSelect(frameTab);
 
     }
 
