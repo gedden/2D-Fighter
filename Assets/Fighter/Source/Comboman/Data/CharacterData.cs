@@ -118,10 +118,14 @@ namespace Comboman
             return result;
         }
 
-        public FrameData UpdateFrame(Sprite sprite, Rect hitbox, Rect attackbox)
+        public FrameData UpdateFrame(Sprite sprite, bool hitEnabled, Rect hitbox, bool attackEnabled, Rect attackbox)
         {
             var frame = GetFrameForSprite(sprite);
+
+            frame.HasHitbox = hitEnabled;
             frame.Hitbox = hitbox;
+
+            frame.HasAttackbox = attackEnabled;
             frame.Attackbox = attackbox;
             Dirty = true;
             return frame;

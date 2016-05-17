@@ -5,6 +5,7 @@
   <Frames>
     <FrameData>
       <SpriteName>balth_0</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -35,6 +36,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -68,6 +70,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_1</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -98,6 +101,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -131,6 +135,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_2</SpriteName>
+      <HasHitbox>true</HasHitbox>
       <Hitbox>
         <x>20.9999924</x>
         <y>7.749997</y>
@@ -161,6 +166,7 @@
         <xMax>52.99998</xMax>
         <yMax>96.49997</yMax>
       </Hitbox>
+      <HasAttackbox>true</HasAttackbox>
       <Attackbox>
         <x>55.35711</x>
         <y>6.071425</y>
@@ -180,10 +186,10 @@
           <x>69.285675</x>
           <y>21.4285583</y>
         </max>
-        <width>13.9285631</width>
+        <width>13.928566</width>
         <height>15.3571339</height>
         <size>
-          <x>13.9285631</x>
+          <x>13.928566</x>
           <y>15.3571339</y>
         </size>
         <xMin>55.35711</xMin>
@@ -194,6 +200,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_3</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -224,6 +231,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -257,6 +265,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_4</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -287,6 +296,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -320,6 +330,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_5</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -350,6 +361,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -383,6 +395,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_6</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -413,6 +426,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -446,6 +460,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_7</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -476,6 +491,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -509,6 +525,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_8</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -539,6 +556,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -572,6 +590,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_9</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -602,6 +621,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -635,6 +655,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_10</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -665,6 +686,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -698,6 +720,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_11</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -728,6 +751,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -761,6 +785,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_12</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -791,6 +816,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -824,6 +850,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_13</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -854,6 +881,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -887,6 +915,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_14</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -917,6 +946,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -950,6 +980,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_15</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -980,6 +1011,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1013,6 +1045,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_16</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1043,6 +1076,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1076,6 +1110,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_17</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1106,6 +1141,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1139,6 +1175,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_18</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1169,6 +1206,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1202,6 +1240,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_19</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1232,6 +1271,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1265,6 +1305,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_20</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1295,6 +1336,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1328,6 +1370,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_21</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1358,6 +1401,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1391,6 +1435,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_22</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1421,6 +1466,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1454,6 +1500,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_23</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1484,6 +1531,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1517,6 +1565,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_24</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1547,6 +1596,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1580,6 +1630,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_25</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1610,6 +1661,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1643,6 +1695,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_26</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1673,6 +1726,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1706,6 +1760,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_27</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1736,6 +1791,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1769,6 +1825,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_28</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1799,6 +1856,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1832,6 +1890,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_29</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1862,6 +1921,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1895,6 +1955,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_30</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1925,6 +1986,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -1958,6 +2020,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_31</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -1988,6 +2051,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2021,6 +2085,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_32</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2051,6 +2116,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2084,6 +2150,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_33</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2114,6 +2181,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2147,6 +2215,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_34</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2177,6 +2246,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2210,6 +2280,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_35</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2240,6 +2311,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2273,6 +2345,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_36</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2303,6 +2376,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2336,6 +2410,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_37</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2366,6 +2441,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2399,6 +2475,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_38</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2429,6 +2506,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2462,6 +2540,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_39</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2492,6 +2571,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2525,6 +2605,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_40</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2555,6 +2636,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2588,6 +2670,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_41</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2618,6 +2701,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2651,6 +2735,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_42</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2681,6 +2766,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2714,6 +2800,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_43</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2744,6 +2831,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2777,6 +2865,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_44</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2807,6 +2896,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2840,6 +2930,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_45</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2870,6 +2961,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2903,6 +2995,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_46</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2933,6 +3026,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -2966,6 +3060,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_47</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -2996,6 +3091,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3029,6 +3125,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_48</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3059,6 +3156,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3092,6 +3190,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_49</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3122,6 +3221,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3155,6 +3255,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_50</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3185,6 +3286,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3218,6 +3320,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_51</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3248,6 +3351,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3281,6 +3385,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_52</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3311,6 +3416,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3344,6 +3450,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_53</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3374,6 +3481,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3407,6 +3515,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_54</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3437,6 +3546,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3470,6 +3580,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_55</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3500,6 +3611,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3533,6 +3645,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_56</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3563,6 +3676,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3596,6 +3710,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_57</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3626,6 +3741,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3659,6 +3775,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_58</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3689,6 +3806,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3722,6 +3840,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_59</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3752,6 +3871,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3785,6 +3905,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_60</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3815,6 +3936,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3848,6 +3970,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_61</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3878,6 +4001,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3911,6 +4035,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_62</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -3941,6 +4066,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -3974,6 +4100,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_63</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4004,6 +4131,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4037,6 +4165,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_64</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4067,6 +4196,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4100,6 +4230,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_65</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4130,6 +4261,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4163,6 +4295,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_66</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4193,6 +4326,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4226,6 +4360,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_67</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4256,6 +4391,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4289,6 +4425,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_68</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4319,6 +4456,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4352,6 +4490,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_69</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4382,6 +4521,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4415,6 +4555,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_70</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4445,6 +4586,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4478,6 +4620,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_71</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4508,6 +4651,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4541,6 +4685,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_72</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4571,6 +4716,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4604,6 +4750,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_73</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4634,6 +4781,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4667,6 +4815,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_74</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4697,6 +4846,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4730,6 +4880,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_75</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4760,6 +4911,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4793,6 +4945,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_76</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4823,6 +4976,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4856,6 +5010,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_77</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4886,6 +5041,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4919,6 +5075,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_78</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -4949,6 +5106,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>
@@ -4982,6 +5140,7 @@
     </FrameData>
     <FrameData>
       <SpriteName>balth_79</SpriteName>
+      <HasHitbox>false</HasHitbox>
       <Hitbox>
         <x>0</x>
         <y>0</y>
@@ -5012,6 +5171,7 @@
         <xMax>0</xMax>
         <yMax>0</yMax>
       </Hitbox>
+      <HasAttackbox>false</HasAttackbox>
       <Attackbox>
         <x>0</x>
         <y>0</y>

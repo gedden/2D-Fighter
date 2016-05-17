@@ -33,15 +33,20 @@ public class FrameDataPanel : ICombomanPanel
     /// </summary>
     public void Draw()
     {
-        
-        if( GUILayout.Toggle(Selected, data.SpriteName, GUILayout.Width(FrameDataListPanel.Height), GUILayout.Height(FrameDataListPanel.Height)) )
+        var s = new GUIStyle(GUI.skin.box);
+        s.normal.background = Texture2D.blackTexture;
+
+        if ( GUILayout.Toggle(Selected, data.SpriteName, GUILayout.Width(FrameDataListPanel.Height), GUILayout.Height(FrameDataListPanel.Height)) )
             CombomanEditor.Instance.DoSelect(this);
-        //GUILayout.Box(data.SpriteName, styleRightView, GUILayout.Width(FrameDataListPanel.Height), GUILayout.Height(FrameDataListPanel.Height));
+
 
         var rect = GUILayoutUtility.GetLastRect();
         Texture t = frame.Sprite.texture;
         Rect tr = frame.Sprite.textureRect;
         Rect r = new Rect(tr.x / t.width, tr.y / t.height, tr.width / t.width, tr.height / t.height);
+
+        var R = new Rect(rect.x, rect.y, FrameDataListPanel.Height, FrameDataListPanel.Height);
+        GUIUtil.DrawFrame(R);
 
         var sx = tr.width / FrameDataListPanel.Height;
         var sy = tr.height / FrameDataListPanel.Height;
@@ -52,10 +57,8 @@ public class FrameDataPanel : ICombomanPanel
         area.x += FrameDataListPanel.Height/2 - area.width / 2;
         area.y += FrameDataListPanel.Height / 2 - area.height / 2;
 
-        GUI.DrawTexture(area, Texture2D.whiteTexture);
+        //GUI.DrawTexture(area, Texture2D.whiteTexture);
         GUI.DrawTextureWithTexCoords(area, t, r);
-        
-
     }
 
     public void OnCharacterLoaded(CharacterData data)

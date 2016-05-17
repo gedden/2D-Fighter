@@ -11,7 +11,11 @@ namespace Comboman
     public class FrameData
     {
         public String SpriteName;
+
+        public bool HasHitbox = false;
         public Rect Hitbox;
+
+        public bool HasAttackbox = false;
         public Rect Attackbox;
 
         /// <summary>

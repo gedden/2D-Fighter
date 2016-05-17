@@ -51,6 +51,10 @@ namespace Comboman
             SetState(Anim.Idle);
         }
 
+        /// <summary>
+        /// Set the animation state
+        /// </summary>
+        /// <param name="next"></param>
         public void SetState(Anim next)
         {
             if (next == _state)

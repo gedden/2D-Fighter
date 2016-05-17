@@ -48,7 +48,11 @@ class FrameTab : CombomanTab
         frame = Frame.CreateFrame(data, sprites);
 
         HitBox.Data = data.Hitbox;
+        HitBox.Enabled = data.HasHitbox;
+
         AttackBox.Data = data.Attackbox;
+        AttackBox.Enabled = data.HasAttackbox;
+
         CombomanEditor.Instance.RequestRepaint();
 
         this.data = data;
@@ -62,8 +66,13 @@ class FrameTab : CombomanTab
         {
 
             // Draw the tools
-            GUILayout.Box("asdf", GUILayout.Width(35), GUILayout.ExpandHeight(true));
-            DrawTools(GUILayoutUtility.GetLastRect());
+            //GUILayout.Box("asdf", GUILayout.Width(35), GUILayout.ExpandHeight(true));
+            GUILayout.BeginVertical(GUILayout.Width(35), GUILayout.ExpandHeight(true));
+            {
+                //DrawTools(GUILayoutUtility.GetLastRect());
+                DrawTools();
+            }
+            GUILayout.EndVertical();
 
             // Draw the character
             //GUILayout.Box("big", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
@@ -95,9 +104,19 @@ class FrameTab : CombomanTab
         GUILayout.EndHorizontal();
     }
 
+    /// <summary>
+    /// Returns true if there are any pending changes
+    /// </summary>
+    /// <returns></returns>
     private bool HasPendingChanges()
     {
+        if (HitBox.Enabled != frame.Data.HasHitbox)
+            return true;
+
         if (HitBox.Data != frame.Data.Hitbox)
+            return true;
+
+        if (AttackBox.Enabled != frame.Data.HasAttackbox)
             return true;
 
         if (AttackBox.Data != frame.Data.Attackbox)
@@ -108,15 +127,14 @@ class FrameTab : CombomanTab
     private void Save()
     {
         // Update the frame data
-        Character.UpdateFrame(frame.Sprite, HitBox.Data, AttackBox.Data);
+        Character.UpdateFrame(frame.Sprite, HitBox.Enabled, HitBox.Data, AttackBox.Enabled, AttackBox.Data);
     }
 
-    private void DrawTools(Rect dim)
+    /// <summary>
+    /// Draw the tools
+    /// </summary>
+    private void DrawTools()
     {
-        var size = new Rect(CombomanEditor.LEFT_CONTROL_WIDTH + dim.x + 15, dim.y + 45, 35, 100);
-        GUILayout.BeginArea(size);
-
-        //HitBox.Selected = DrawToolButton(HitBox.Selected, hitboxButtonTexture);
         HitBox.Selected = HitBox.DrawToolButton();
         AttackBox.Selected = AttackBox.DrawToolButton();
 
@@ -124,10 +142,6 @@ class FrameTab : CombomanTab
         if (GUILayout.Button(saveButtonTexture))
             Save();
         GUI.color = Color.white;
-        
-        //GUILayout.Button("test");
-        //GUILayout.Button("test");
-        GUILayout.EndArea();
     }
 
     /// <summary>

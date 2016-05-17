@@ -66,16 +66,16 @@ public class FrameDataListPanel : ICombomanPanel
             {
                 if (GUILayout.Button("Add Missing"))
                     DoAddMissingFrames();
-                GUILayout.Button("Sickit");
-                GUILayout.Button("Sickit");
             }
             GUILayout.EndVertical();
 
             scrollPos = GUILayout.BeginScrollView(scrollPos, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true), GUILayout.MaxHeight(LocalHeight), GUILayout.MinHeight(LocalHeight));
 
             GUILayout.BeginHorizontal();
-            foreach (var panel in panels)
-                panel.Draw();
+            {
+                foreach (var panel in panels)
+                    panel.Draw();
+            }
             GUILayout.EndHorizontal();
 
             GUILayout.EndScrollView();

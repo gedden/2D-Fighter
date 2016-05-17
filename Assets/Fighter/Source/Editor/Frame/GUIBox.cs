@@ -11,7 +11,7 @@ namespace Comboman
     {
         private static Texture2D BoxTexture = null;
 
-        public Rect Data = new Rect(0,0,10,10);
+        public Rect Data = new Rect(0,0,0,0);
         private Color _color, _selected;
 
 
@@ -69,6 +69,10 @@ namespace Comboman
             }
         }
 
+        /// <summary>
+        /// Draw the tools button
+        /// </summary>
+        /// <returns></returns>
         public bool DrawToolButton()
         {
             Enabled = GUILayout.Toggle(Enabled, name);
@@ -92,6 +96,9 @@ namespace Comboman
         /// <param name="bounds"></param>
         public void Draw(Rect bounds)
         {
+            if (!Enabled)
+                return;
+
             if( bounds.x > 0 )
                 _lastBounds = bounds;
 
