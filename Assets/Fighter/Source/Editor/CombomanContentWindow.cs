@@ -12,13 +12,7 @@ class CombomanContentWindow
     List<FrameDataEditor> frameWindows;
     Vector2 posRight;
     GUIStyle styleRightView = null;
-    private readonly CombomanEditorWindow parent;
 
-    public CombomanContentWindow(CombomanEditorWindow parent)
-    {
-        this.parent = parent;
-        frameWindows = new List<FrameDataEditor>();
-    }
 
     private CharacterData Data
     {
@@ -28,13 +22,12 @@ class CombomanContentWindow
         }
     }
 
-
+    /// <summary>
+    /// On GUI
+    /// </summary>
     public void OnGUI()
     {
         if (styleRightView == null) styleRightView = new GUIStyle(GUI.skin.box);
-
-
-        
 
         if (Data == null)
         {
@@ -46,11 +39,7 @@ class CombomanContentWindow
         {
             UpdateFrameWindows();
             DrawFrameWindows();
-        }
-
-
-
-        
+        }        
     }
 
     Vector2 p = Vector2.zero;

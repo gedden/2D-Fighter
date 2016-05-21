@@ -25,7 +25,7 @@ public class CombomanControlPanel : CombomanPanel
         GUILayout.Space(4);
 
         var _char = CombomanEditor.Instance.Character;
-        if (_char == null)
+        if (_char == null || CombomanEditor.Instance.MovesTab == null)
         {
             GUILayout.Box("No Character Loaded", GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true));
             return;
@@ -42,30 +42,32 @@ public class CombomanControlPanel : CombomanPanel
 
         GUILayout.TextField(_char.name);
         //if( GUILayout.Button("Add Frame Data") ) AddNewFrame();
-        GUILayout.Button("Test 2 " + ID);
+        if (GUILayout.Button("Add Move"))
+            CombomanEditor.Instance.AddMove();
 
         scroll = GUILayout.BeginScrollView(scroll, GUILayout.Height(300), GUILayout.ExpandWidth(true));
         {
             GUILayout.BeginVertical(GUILayout.ExpandWidth(true));
             {
-                for( var i=0;i<60;i++ )
-                    GUILayout.Button("Hi", EditorStyles.toolbarButton);
+                // get the currently selected move
+                var move = CombomanEditor.Instance.MovesTab.Move;
+
+                GUIStyle style = new GUIStyle(EditorStyles.toolbarButton);
+                style.normal.background = Texture2D.whiteTexture;
+
+                foreach (var m in Character.Moves)
+                {
+                    GUI.color = move == m ? Color.blue : Color.white;
+                    if (GUILayout.Button(m.Name, style))
+                        CombomanEditor.Instance.DoSelect(m);
+                    GUI.color = Color.white;
+                }
             }
             GUILayout.EndVertical();
         }
         GUILayout.EndScrollView();
 
-        //GUILayout.BeginArea(new Rect(0, 0, 200, 200), Texture2D.blackTexture);
-        //GUILayout.Button("Test32 " + ID);
-        //GUILayout.EndArea();
-        
-        /*
-        var last = GUILayoutUtility.GetLastRect();
-        var next = new Rect(6, last.yMax + EditorGUIUtility.singleLineHeight, last.width - 6, last.width - 6);
-        GUIDrawRect(next, Color.black);
-        //GUILayout.Space(next.height);
-        GUILayout.Height(next.height);
-        */
+
         EditorGUILayout.LabelField("View Scale", "" + CombomanEditor.Instance.ViewScale);
 
         if (Event.current.type == EventType.scrollWheel)

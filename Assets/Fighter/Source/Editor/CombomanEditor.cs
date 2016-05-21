@@ -13,7 +13,7 @@ public class CombomanEditor : EditorWindow
 
     private List<CombomanTab> tabs = null;
     private FrameTab frameTab = null;
-    private MovesTab animTab = null;
+    private MovesTab moveTab = null;
     private float _scale = 1.0f;
 
     public static CombomanEditor Instance { get; private set; }
@@ -60,8 +60,8 @@ public class CombomanEditor : EditorWindow
         frameTab = new FrameTab();
         tabs.Add(frameTab);
 
-        animTab = new MovesTab();
-        tabs.Add(animTab);
+        moveTab = new MovesTab();
+        tabs.Add(moveTab);
 
 
         for (int x=0;x<2;x++ )
@@ -283,7 +283,29 @@ public class CombomanEditor : EditorWindow
         // Make the tab the selection
         if( last == null )
             DoSelect(frameTab);
+    }
 
+    public void DoSelect(MoveData move)
+    {
+        moveTab.Move = move;
+        DoSelect(moveTab);
+    }
+
+    public MovesTab MovesTab
+    {
+        get
+        {
+            return moveTab;
+        }
+    }
+
+
+    public void AddMove()
+    {
+        // Create a new move
+        MoveData move = new MoveData("New Move #" + Character.Moves.Count);
+
+        Character.AddMove(move);
     }
 
 

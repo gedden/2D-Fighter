@@ -130,5 +130,11 @@ namespace Comboman
             Dirty = true;
             return frame;
         }
+
+        public void AddMove(MoveData move)
+        {
+            Dirty = true;
+            Moves.Add(move);
+        }
     }
 }
