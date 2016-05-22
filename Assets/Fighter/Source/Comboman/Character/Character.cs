@@ -69,7 +69,7 @@ namespace Comboman
                 if (move == null)
                     return;
 
-                Current = new Sequence(Time.fixedTime, move);
+                Current = new Sequence(Time.fixedTime, Data, move);
             }
         }
 

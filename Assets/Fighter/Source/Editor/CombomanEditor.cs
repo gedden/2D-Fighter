@@ -52,7 +52,9 @@ public class CombomanEditor : EditorWindow
         }
     }
 
-
+    /// <summary>
+    /// Setup the tabs
+    /// </summary>
     private void SetupTabs()
     {
         tabs = new List<CombomanTab>();
@@ -180,9 +182,6 @@ public class CombomanEditor : EditorWindow
         // Main Area
         var styleLeftView = new GUIStyle(GUI.skin.scrollView);
 
-        var last = GUILayoutUtility.GetLastRect();
-
-
         GUILayout.BeginHorizontal(styleLeftView);
         {
             // Left Controls
@@ -227,10 +226,7 @@ public class CombomanEditor : EditorWindow
         Frames.Draw();
 
         GUILayout.EndVertical();
-
-
-
-
+        DragManager.Instance.Update();
     }
 
     private CombomanControlPanel Control
@@ -260,6 +256,7 @@ public class CombomanEditor : EditorWindow
             _selected.Selected = false;
         tab.Selected = true;
         _selected = tab;
+        tab.OnSelect();
     }
 
 
@@ -304,7 +301,6 @@ public class CombomanEditor : EditorWindow
     {
         // Create a new move
         MoveData move = new MoveData("New Move #" + Character.Moves.Count);
-
         Character.AddMove(move);
     }
 

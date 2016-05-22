@@ -28,9 +28,7 @@ namespace Comboman
             var move = new MoveData(Anim.Idle.ToString());
             foreach (var frame in ryu.Frames)
             {
-                var m = new MoveFrame();
-                m.Duration = 0.1f;
-                m.Frame = frame;
+                var m = new MoveFrame(frame.SpriteName, 0.1f);
 
                 move.MoveFrames.Add(m);
             }

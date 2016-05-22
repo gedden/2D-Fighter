@@ -35,4 +35,9 @@ public class CombomanTab : CombomanPanel
     {
         throw new NotImplementedException();
     }
+
+    public virtual void OnSelect()
+    {
+
+    }
 }

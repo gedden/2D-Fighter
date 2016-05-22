@@ -28,6 +28,19 @@ public class FrameDataPanel : ICombomanPanel
 
     public FrameData FrameData { get { return data; } }
 
+    private void CheckDragBegin()
+    {
+        var rt = GUILayoutUtility.GetLastRect();
+        var dm = DragManager.Instance;
+        var val = dm.IsDraggingOver(rt);
+
+
+        if (!dm.IsDragging && val)
+        {
+            dm.Frame = frame;
+        }
+    }
+
     /// <summary>
     /// Draw the actual frame panel
     /// </summary>
@@ -36,11 +49,42 @@ public class FrameDataPanel : ICombomanPanel
         var s = new GUIStyle(GUI.skin.box);
         s.normal.background = Texture2D.blackTexture;
 
-        if ( GUILayout.Toggle(Selected, data.SpriteName, GUILayout.Width(FrameDataListPanel.Height), GUILayout.Height(FrameDataListPanel.Height)) )
-            CombomanEditor.Instance.DoSelect(this);
 
+        /*
+        if (GUILayout.Toggle(Selected, data.SpriteName, GUILayout.Width(FrameDataListPanel.Height), GUILayout.Height(FrameDataListPanel.Height)))
+        {
+            CheckDragBegin();
+            CombomanEditor.Instance.DoSelect(this);
+        }
+
+        */
+
+        if (Selected)
+            GUI.color = new Color(0.2f, 0.2f, 0.2f);
+        GUILayout.Box(data.SpriteName, GUILayout.Width(FrameDataListPanel.Height), GUILayout.Height(FrameDataListPanel.Height));
+        GUI.color = Color.white;
 
         var rect = GUILayoutUtility.GetLastRect();
+
+        if ( rect.Contains(Event.current.mousePosition) )
+        {
+            if( Event.current.type == EventType.MouseDown)
+            {
+                if( !Selected )
+                {
+                    Selected = true;
+                    CombomanEditor.Instance.DoSelect(this);
+                }
+            }
+
+            if (Selected)
+                CheckDragBegin();
+        }
+
+
+        
+
+        
         Texture t = frame.Sprite.texture;
         Rect tr = frame.Sprite.textureRect;
         Rect r = new Rect(tr.x / t.width, tr.y / t.height, tr.width / t.width, tr.height / t.height);
@@ -59,6 +103,8 @@ public class FrameDataPanel : ICombomanPanel
 
         //GUI.DrawTexture(area, Texture2D.whiteTexture);
         GUI.DrawTextureWithTexCoords(area, t, r);
+
+
     }
 
     public void OnCharacterLoaded(CharacterData data)

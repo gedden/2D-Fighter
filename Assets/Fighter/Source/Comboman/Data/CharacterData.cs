@@ -104,8 +104,18 @@ namespace Comboman
         /// <returns></returns>
         public FrameData GetFrameForSprite(Sprite sprite)
         {
-            foreach( var frame in Frames )
-                if (frame.SpriteName.ToLower() == sprite.name.ToLower())
+            return GetFrame(sprite.name);
+        }
+
+        /// <summary>
+        /// Get the frame for the passed in sprite frame name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public FrameData GetFrame(string name)
+        {
+            foreach (var frame in Frames)
+                if (frame.SpriteName.ToLower() == name.ToLower())
                     return frame;
             return null;
         }

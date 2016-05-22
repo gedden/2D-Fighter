@@ -60,5 +60,10 @@ public class MovesTab : CombomanTab
 
     }
 
+    public override void OnSelect()
+    {
+        Timeline.ReloadBars();
+    }
+
     public MoveData Move { get; set; }
 }

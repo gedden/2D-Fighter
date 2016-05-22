@@ -6,11 +6,17 @@ using System.Text;
 using UnityEditor;
 using UnityEngine;
 
-public class TimelinePanel : IDrawablePanel
+public class TimelinePanel : IDrawablePanel, IDragTarget
 {
     private static readonly float CONTROL_WIDTH = 150;
     public List<Bar> Bars;
     private MovesTab _tab;
+    private Vector2 _lastDragPos;
+
+    /// <summary>
+    /// Class Constructor
+    /// </summary>
+    /// <param name="tab"></param>
     public TimelinePanel(MovesTab tab)
     {
         _tab = tab;
@@ -57,9 +63,11 @@ public class TimelinePanel : IDrawablePanel
 
         var rect = GUILayoutUtility.GetLastRect();
 
-        if (rect.Contains(Event.current.mousePosition) && Event.current.type == EventType.mouseDrag)
-            Debug.LogWarning("OVER!" + Event.current.mousePosition + " t" + Event.current.type);
-        else Debug.Log("RECT!" + rect + " vs " + Event.current.mousePosition  + " t " + Event.current.type);
+        var dm = DragManager.Instance;
+        if (dm.IsDragging && dm.IsDraggingOver(rect) && dm.Frame != null)
+        {
+            dm.Target = this;
+        }
     }
 
     /// <summary>
@@ -70,5 +78,34 @@ public class TimelinePanel : IDrawablePanel
     {
         // Add a bar to this list
         Bars.Add(bar);
+    }
+
+    public void OnBeforeDragComplete()
+    {
+        var c = CombomanEditor.Instance.Character;
+        var dm = DragManager.Instance;
+        var frame = dm.Frame;
+
+        // Create a new move frame
+        var moveFrame = new MoveFrame(frame.Name, 0.5f);
+
+        // Add a new move frame 
+        Move.AddFrame(moveFrame);
+
+        
+        c.Dirty = true;
+        ReloadBars();
+    }
+
+
+    public void ReloadBars()
+    {
+        Bars.Clear();
+
+        foreach( var frame in Move.MoveFrames )
+        {
+            var bar = new Bar(frame, CombomanEditor.Instance.Character);
+            Add(bar);
+        }
     }
 }

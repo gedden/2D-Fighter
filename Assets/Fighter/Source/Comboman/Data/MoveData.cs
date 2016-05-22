@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace Comboman
 {
@@ -14,12 +15,20 @@ namespace Comboman
         public float Startup = 0f;
         public float Recovery = 0f;
 
+        /// <summary>
+        /// Class Constructor
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="_data"></param>
         public MoveData(String name)
         {
             this.Name = name;
             MoveFrames = new List<MoveFrame>();
         }
 
+        /// <summary>
+        /// Set the move data
+        /// </summary>
         public MoveData() : this("")
         {
         }
@@ -54,7 +63,7 @@ namespace Comboman
         /// </summary>
         /// <param name="timeFromStart"></param>
         /// <returns></returns>
-        public FrameData GetFrameByTime(float timeFromStart)
+        public FrameData GetFrameByTime(float timeFromStart, CharacterData _char)
         {
             var t = timeFromStart % Duration;
 
@@ -64,18 +73,51 @@ namespace Comboman
                 var next = c + f.Duration;
 
                 if (t < next)
-                    return f.Frame;
+                    return f.GetFrame(_char);
                 c = next;
             }
-            return MoveFrames[0].Frame;
+            return MoveFrames[0].GetFrame(_char);
         }
 
+        /// <summary>
+        /// Add the frame
+        /// </summary>
+        /// <param name="frame"></param>
+        public void AddFrame(MoveFrame frame)
+        {
+            MoveFrames.Add(frame);
+        }
     }
 
-    public struct MoveFrame
+    public class MoveFrame
     {
-        public FrameData Frame;
+        public string FrameName;
         public float Duration;
+
+        /// <summary>
+        /// Class Constructor
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="Duration"></param>
+        public MoveFrame(string name, float Duration)
+        {
+            this.FrameName = name;
+            this.Duration = Duration;
+        }
+
+        /// <summary>
+        /// Class Constructor
+        /// </summary>
+        private MoveFrame() : this("", 0)
+        {
+
+        }
+
+        public FrameData GetFrame(CharacterData _char)
+        {
+            return _char.GetFrame(FrameName);
+        }
+
     }
 
 }
