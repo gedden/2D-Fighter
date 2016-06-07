@@ -11,6 +11,7 @@ namespace Comboman
     {
         public String Name;
         public List<MoveFrame> MoveFrames;
+        public MoveType MoveType;
 
         public float Startup = 0f;
         public float Recovery = 0f;
@@ -24,6 +25,12 @@ namespace Comboman
         {
             this.Name = name;
             MoveFrames = new List<MoveFrame>();
+            MoveType = MoveType.CUSTOM_ATTACK;
+        }
+
+        public MoveData(MoveType type) : this(type.ToString())
+        {
+            MoveType = type;
         }
 
         /// <summary>
@@ -65,6 +72,9 @@ namespace Comboman
         /// <returns></returns>
         public FrameData GetFrameByTime(float timeFromStart, CharacterData _char)
         {
+            if (MoveFrames == null)
+                return null;
+
             var t = timeFromStart % Duration;
 
             var c = 0.0f;
@@ -76,7 +86,15 @@ namespace Comboman
                     return f.GetFrame(_char);
                 c = next;
             }
-            return MoveFrames[0].GetFrame(_char);
+
+            try
+            {
+                return MoveFrames[0].GetFrame(_char);
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -86,6 +104,11 @@ namespace Comboman
         public void AddFrame(MoveFrame frame)
         {
             MoveFrames.Add(frame);
+        }
+
+        public void Remove(MoveFrame frame)
+        {
+            MoveFrames.Remove(frame);
         }
     }
 

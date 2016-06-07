@@ -41,7 +41,8 @@ public class CombomanControlPanel : CombomanPanel
         EditorGUILayout.LabelField("Sprites", "" + Character.LoadSprites().Length);
 
         GUILayout.TextField(_char.name);
-        //if( GUILayout.Button("Add Frame Data") ) AddNewFrame();
+        // if( GUILayout.Button("Add Frame Data") ) AddNewFrame();
+        // if (GUILayout.Button("Add Missing Basics")) CombomanEditor.Instance.AddMissingBasicMoves();
         if (GUILayout.Button("Add Move"))
             CombomanEditor.Instance.AddMove();
 

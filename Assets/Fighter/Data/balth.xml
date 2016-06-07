@@ -7,34 +7,34 @@
       <SpriteName>balth_0</SpriteName>
       <HasHitbox>true</HasHitbox>
       <Hitbox>
-        <x>14.4</x>
-        <y>0.8</y>
+        <x>17.1428585</x>
+        <y>0</y>
         <position>
-          <x>14.4</x>
-          <y>0.8</y>
+          <x>17.1428585</x>
+          <y>0</y>
         </position>
         <center>
-          <x>37.4</x>
-          <y>48.8</y>
+          <x>40.7142868</x>
+          <y>50.0000038</y>
         </center>
         <min>
-          <x>14.4</x>
-          <y>0.8</y>
+          <x>17.1428585</x>
+          <y>0</y>
         </min>
         <max>
-          <x>60.4</x>
-          <y>96.8</y>
+          <x>64.28572</x>
+          <y>100.000008</y>
         </max>
-        <width>46</width>
-        <height>96</height>
+        <width>47.14286</width>
+        <height>100.000008</height>
         <size>
-          <x>46</x>
-          <y>96</y>
+          <x>47.14286</x>
+          <y>100.000008</y>
         </size>
-        <xMin>14.4</xMin>
-        <yMin>0.8</yMin>
-        <xMax>60.4</xMax>
-        <yMax>96.8</yMax>
+        <xMin>17.1428585</xMin>
+        <yMin>0</yMin>
+        <xMax>64.28572</xMax>
+        <yMax>100.000008</yMax>
       </Hitbox>
       <HasAttackbox>false</HasAttackbox>
       <Attackbox>
@@ -5204,5 +5204,45 @@
       </Attackbox>
     </FrameData>
   </Frames>
-  <Moves />
+  <Moves>
+    <MoveData>
+      <Name>New Move #0</Name>
+      <MoveFrames>
+        <MoveFrame>
+          <FrameName>balth_1</FrameName>
+          <Duration>0.5</Duration>
+        </MoveFrame>
+        <MoveFrame>
+          <FrameName>balth_0</FrameName>
+          <Duration>0.5</Duration>
+        </MoveFrame>
+        <MoveFrame>
+          <FrameName>balth_2</FrameName>
+          <Duration>0.5</Duration>
+        </MoveFrame>
+        <MoveFrame>
+          <FrameName>balth_4</FrameName>
+          <Duration>0.5</Duration>
+        </MoveFrame>
+        <MoveFrame>
+          <FrameName>balth_2</FrameName>
+          <Duration>0.5</Duration>
+        </MoveFrame>
+      </MoveFrames>
+      <Startup>0</Startup>
+      <Recovery>0</Recovery>
+    </MoveData>
+    <MoveData>
+      <Name>New Move #1</Name>
+      <MoveFrames />
+      <Startup>0</Startup>
+      <Recovery>0</Recovery>
+    </MoveData>
+    <MoveData>
+      <Name>New Move #2</Name>
+      <MoveFrames />
+      <Startup>0</Startup>
+      <Recovery>0</Recovery>
+    </MoveData>
+  </Moves>
 </CharacterData>

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace Comboman
@@ -31,7 +34,29 @@ namespace Comboman
         /// <returns></returns>
         public FrameData GetFrame()
         {
-            return _data.GetFrameByTime(Time.fixedTime + _start, _char);
+            return _data.GetFrameByTime(Now + _start, _char);
         }
+
+        public float Start
+        {
+            get
+            {
+                return _start;
+            }
+        }
+
+
+        public static float Now
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (Application.isEditor)
+                    return (float)EditorApplication.timeSinceStartup;
+#endif
+                return Time.fixedTime;
+            }
+        }
+
     }
 }

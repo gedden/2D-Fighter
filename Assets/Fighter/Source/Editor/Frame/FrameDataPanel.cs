@@ -14,6 +14,11 @@ public class FrameDataPanel : ICombomanPanel
     private Frame frame;
     private float scale = 1.0f;
 
+    /// <summary>
+    /// Class constructor
+    /// </summary>
+    /// <param name="character"></param>
+    /// <param name="data"></param>
     public FrameDataPanel(CharacterData character, FrameData data)
     {
         styleRightView = new GUIStyle(GUI.skin.box);
@@ -28,6 +33,9 @@ public class FrameDataPanel : ICombomanPanel
 
     public FrameData FrameData { get { return data; } }
 
+    /// <summary>
+    /// Check to see drag begin
+    /// </summary>
     private void CheckDragBegin()
     {
         var rt = GUILayoutUtility.GetLastRect();
@@ -80,10 +88,6 @@ public class FrameDataPanel : ICombomanPanel
             if (Selected)
                 CheckDragBegin();
         }
-
-
-        
-
         
         Texture t = frame.Sprite.texture;
         Rect tr = frame.Sprite.textureRect;
@@ -101,10 +105,7 @@ public class FrameDataPanel : ICombomanPanel
         area.x += FrameDataListPanel.Height/2 - area.width / 2;
         area.y += FrameDataListPanel.Height / 2 - area.height / 2;
 
-        //GUI.DrawTexture(area, Texture2D.whiteTexture);
         GUI.DrawTextureWithTexCoords(area, t, r);
-
-
     }
 
     public void OnCharacterLoaded(CharacterData data)

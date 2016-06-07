@@ -2,11 +2,11 @@
 using UnityEditor;
 using Comboman;
 using System.Collections.Generic;
+using Owl;
 
 [ExecuteInEditMode]
 public class CombomanEditor : EditorWindow
 {
-    FrameSequenceEditor editor = null;
     CombomanControlPanel control = null ;
     FrameDataListPanel frames = null;
     public static readonly float LEFT_CONTROL_WIDTH = 300;
@@ -132,6 +132,7 @@ public class CombomanEditor : EditorWindow
         path = path.Substring(0, path.LastIndexOf("."));
 
         Character = CharacterData.Create(path);
+        AddMissingBasicMoves();
         OnCharacterLoaded();
     }
 
@@ -175,7 +176,14 @@ public class CombomanEditor : EditorWindow
            GUI.color = Color.white;
         GUI.enabled = true;
 
-        GUILayout.FlexibleSpace();
+
+        if (GUILayout.Button("Add Missing", EditorStyles.toolbarButton))
+        {
+            frames.DoAddMissingFrames();
+            AddMissingBasicMoves();
+        }
+
+            GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
 
 
@@ -302,6 +310,38 @@ public class CombomanEditor : EditorWindow
         // Create a new move
         MoveData move = new MoveData("New Move #" + Character.Moves.Count);
         Character.AddMove(move);
+    }
+
+    public void DeleteMove(MoveData move)
+    {
+        // Create a new move
+        Character.DeleteMove(move);
+    }
+
+    public void AddMissingBasicMoves()
+    {
+        var moves = Character.Moves;
+
+        foreach( var t in OwlUtil.GetValues<MoveType>() )
+        {
+            if (!t.IsBasicMove())
+                continue;
+            var found = false;
+
+            foreach (var m in moves)
+                if (m.MoveType == t)
+                {
+                    found = true;
+                    break;
+                }
+
+            // Create a new move
+            if( !found )
+            {
+                var move = new MoveData(t);
+                Character.AddMove(move);
+            }
+        }
     }
 
 

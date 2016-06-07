@@ -146,5 +146,11 @@ namespace Comboman
             Dirty = true;
             Moves.Add(move);
         }
+
+        public void DeleteMove(MoveData move)
+        {
+            Dirty = true;
+            Moves.Remove(move);
+        }
     }
 }

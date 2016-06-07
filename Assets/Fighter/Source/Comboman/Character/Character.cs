@@ -32,7 +32,28 @@ namespace Comboman
             }
         }
 
-        public void Start()
+        public static Character Create(CharacterData _data)
+        {
+            var c = new Character();
+
+            c.Data = _data;
+            c.Frames = new Dictionary<string, Frame>();
+
+            // Set the sprites
+            var sprites = c.Data.LoadSprites();
+
+
+            // Build up all the frame refrences
+            foreach (var frameData in c.Data.Frames)
+            {
+                var frame = Frame.CreateFrame(frameData, sprites);
+                c.Frames.Add(frame.Name, frame);
+            }
+
+            return c;
+        }
+
+        private void LoadFakeFrames()
         {
             //Data = FakeFactory.CreateRyu();
             Data = FakeFactory.LoadRyu();
@@ -43,11 +64,16 @@ namespace Comboman
 
 
             // Build up all the frame refrences
-            foreach( var frameData in Data.Frames )
+            foreach (var frameData in Data.Frames)
             {
                 var frame = Frame.CreateFrame(frameData, sprites);
                 Frames.Add(frame.Name, frame);
             }
+        }
+
+        public void Start()
+        {
+            LoadFakeFrames();
             SetState(Anim.Idle);
         }
 
@@ -93,6 +119,9 @@ namespace Comboman
         public void Update()
         {
             if (_current == null) return;
+
+            if( Frames == null )
+                LoadFakeFrames();
 
             // Get the current frame
             var frameData = _current.GetFrame();

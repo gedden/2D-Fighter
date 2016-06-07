@@ -81,6 +81,9 @@ namespace Comboman
             CombomanEditor.Instance.RequestRepaint();
         }
 
+        /// <summary>
+        /// Check the frame
+        /// </summary>
         public Frame Frame
         {
             get
@@ -92,8 +95,21 @@ namespace Comboman
             set
             {
                 _current = value;
-                //Cursor.SetCursor()
-                //Cursor.SetCursor(value.Sprite.texture, Vector2.zero, CursorMode.Auto);
+            }
+        }
+
+
+        public Bar Bar
+        {
+            get
+            {
+                if (_current is Bar)
+                    return _current as Bar;
+                return null;
+            }
+            set
+            {
+                _current = value;
             }
         }
 

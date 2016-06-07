@@ -55,16 +55,18 @@ namespace Comboman
             this.buttonTexture = buttonTexture;
         }
 
+        public float GlobalScale { get; set; }
+
         public Rect ScaledData
         {
             get
             {
-                var s = CombomanEditor.Instance.ViewScale;
+                var s = GlobalScale;
                 return new Rect(Data.x * s, Data.y * s, Data.width * s, Data.height * s);
             }
             set
             {
-                var s = CombomanEditor.Instance.ViewScale;
+                var s = GlobalScale;
                 Data = new Rect(value.x / s, value.y / s, value.width / s, value.height / s);
             }
         }
