@@ -25,7 +25,7 @@ namespace Comboman
             }
 
             // Create a fake animation
-            var move = new MoveData(Anim.Idle.ToString());
+            var move = new MoveData(MoveType.IDLE);
             foreach (var frame in ryu.Frames)
             {
                 var m = new MoveFrame(frame.SpriteName, 0.1f);

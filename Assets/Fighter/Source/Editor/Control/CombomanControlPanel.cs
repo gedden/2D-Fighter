@@ -6,7 +6,10 @@ using System;
 
 public class CombomanControlPanel : CombomanPanel
 {
+    private static Texture2D _staticRectTexture;
+    private static GUIStyle _staticRectStyle;
     private static int ID = 0;
+    Vector2 scroll = Vector2.zero;
     GUIStyle _style = null;
     
 
@@ -19,7 +22,7 @@ public class CombomanControlPanel : CombomanPanel
 
     }
 
-    Vector2 scroll = Vector2.zero;
+    
     public override void Draw()
     {
         GUILayout.Space(4);
@@ -41,8 +44,6 @@ public class CombomanControlPanel : CombomanPanel
         EditorGUILayout.LabelField("Sprites", "" + Character.LoadSprites().Length);
 
         GUILayout.TextField(_char.name);
-        // if( GUILayout.Button("Add Frame Data") ) AddNewFrame();
-        // if (GUILayout.Button("Add Missing Basics")) CombomanEditor.Instance.AddMissingBasicMoves();
         if (GUILayout.Button("Add Move"))
             CombomanEditor.Instance.AddMove();
 
@@ -74,10 +75,6 @@ public class CombomanControlPanel : CombomanPanel
         if (Event.current.type == EventType.scrollWheel)
             CombomanEditor.Instance.ViewScale -= Event.current.delta.y / 10.0f;
     }
-
-
-    private static Texture2D _staticRectTexture;
-    private static GUIStyle _staticRectStyle;
 
     // Note that this function is only meant to be called from OnGUI() functions.
     public static void GUIDrawRect(Rect position, Color color)
